@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'src/UI_640x480.ui'
 #
-# Created by: PyQt4 UI code generator 4.11.4
+# Created by: PyQt4 UI code generator 4.12.1
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -84,7 +84,8 @@ class Ui_MainWindow(object):
         self.pushButton_RFon.setObjectName(_fromUtf8("pushButton_RFon"))
         self.progressBar_RFout_REF = QtGui.QProgressBar(self.tab_Main)
         self.progressBar_RFout_REF.setGeometry(QtCore.QRect(455, 85, 81, 281))
-        self.progressBar_RFout_REF.setProperty("value", 24)
+        self.progressBar_RFout_REF.setMaximum(3000)
+        self.progressBar_RFout_REF.setProperty("value", 400)
         self.progressBar_RFout_REF.setTextVisible(False)
         self.progressBar_RFout_REF.setOrientation(QtCore.Qt.Vertical)
         self.progressBar_RFout_REF.setInvertedAppearance(False)
@@ -92,7 +93,8 @@ class Ui_MainWindow(object):
         self.progressBar_RFout_REF.setObjectName(_fromUtf8("progressBar_RFout_REF"))
         self.progressBar_VSWR = QtGui.QProgressBar(self.tab_Main)
         self.progressBar_VSWR.setGeometry(QtCore.QRect(365, 85, 81, 281))
-        self.progressBar_VSWR.setProperty("value", 24)
+        self.progressBar_VSWR.setMaximum(300)
+        self.progressBar_VSWR.setProperty("value", 230)
         self.progressBar_VSWR.setTextVisible(False)
         self.progressBar_VSWR.setOrientation(QtCore.Qt.Vertical)
         self.progressBar_VSWR.setInvertedAppearance(False)
@@ -138,7 +140,7 @@ class Ui_MainWindow(object):
         self.label_3.setObjectName(_fromUtf8("label_3"))
         self.progressBar_ETA = QtGui.QProgressBar(self.tab_Main)
         self.progressBar_ETA.setGeometry(QtCore.QRect(275, 85, 81, 281))
-        self.progressBar_ETA.setProperty("value", 24)
+        self.progressBar_ETA.setProperty("value", 66)
         self.progressBar_ETA.setTextVisible(False)
         self.progressBar_ETA.setOrientation(QtCore.Qt.Vertical)
         self.progressBar_ETA.setInvertedAppearance(False)

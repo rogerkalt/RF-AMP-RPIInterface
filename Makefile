@@ -12,3 +12,6 @@ generate:: $(UIFILES)
 run: generate
 #	python3 src/UI_640x480_ui.py
 	python3 src/main.py
+
+clean::
+	rm -rf ./src/__pycache__
