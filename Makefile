@@ -7,9 +7,9 @@ DESTOBJ = $(UIFILES:src/%.ui=src/%_ui.py)
 default: run
 
 generate:: $(UIFILES)
-	pyuic4 -x $(UIFILES) -o $(DESTOBJ)
+	pyuic5 -x $(UIFILES) -o $(DESTOBJ)
 
-run: generate
+run::
 #	python3 src/UI_640x480_ui.py
 	python3 src/main.py
 
