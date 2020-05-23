@@ -6,14 +6,14 @@
 
 from argparse import ArgumentParser
 
-# from PyQt4.QtCore import *
-# from PyQt4.QtGui import *
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtCore import Qt
 
 from UI_640x480_ui import *
 from Definitions import *
 from socket_server import *
 
+from socket import *
 
 # =================================
 # define the class based on the generated one from .ui file
@@ -31,6 +31,9 @@ class Ui_MainWindow_Imp(Ui_MainWindow):
         # init the father
         Ui_MainWindow.__init__(self)
 
+        # this will hide the title bar
+        #super.MainMindowsetWindowFlag(Qt.FramelessWindowHint)
+
     # ~~~~~~~~~~~~~~~~~~~~~~~~~
     # init the objects created in the _ui class
     # this should be called after "setupUi" function
@@ -38,7 +41,7 @@ class Ui_MainWindow_Imp(Ui_MainWindow):
     def initGUIObjects(self):
         self.label_Version.setText("Version: " + VERSION_TAG)
         self.label_Status.setText(control_type + " RF Amp Control for " + connect_host)
-        self.label_Amplifier_Hostname.setText("Amplifier hostname: " + connect_host)
+        self.label_Amplifier_Hostname.setText("Amplifier hostname: " + connect_host + " | " + gethostbyname(connect_host) )
 
         self.frame_SumFault_statecontrol.setVisible(False)
         self.label_FaultDetected.setVisible(False)
