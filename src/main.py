@@ -13,7 +13,8 @@ from UI_640x480_ui import *
 from Definitions import *
 from socket_server import *
 
-from socket import *
+# to display the IP address of eth0
+import netifaces as ni
 
 # =================================
 # define the class based on the generated one from .ui file
@@ -41,7 +42,7 @@ class Ui_MainWindow_Imp(Ui_MainWindow):
     def initGUIObjects(self):
         self.label_Version.setText("Version: " + VERSION_TAG)
         self.label_Status.setText(control_type + " RF Amp Control for " + connect_host)
-        self.label_Amplifier_Hostname.setText("Amplifier hostname: " + connect_host + " | " + gethostbyname(connect_host) )
+        self.label_Amplifier_Hostname.setText("Amplifier hostname: " + connect_host + connect_ip )
 
         self.frame_SumFault_statecontrol.setVisible(False)
         self.label_FaultDetected.setVisible(False)
@@ -191,6 +192,7 @@ if __name__ == "__main__":
 
     if args.connect_host == "localhost":
         connect_host = socket.gethostname()
+        connect_ip = " | " + ni.ifaddresses('eth0')[ni.AF_INET][0]['addr']
         control_type = "LOCAL"
 
         # if local then start the socket server
